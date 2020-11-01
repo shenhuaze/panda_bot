@@ -1,6 +1,3 @@
-#-*- coding:utf-8 -*- 
-# Author: PX
-
 import jieba
 import json
 from pprint import pprint
@@ -21,7 +18,7 @@ for key in keys:
     quest_sp = " ".join(seg_list)
     body.append({
         "_index": "chitchat_panda",
-        "_type": "artice",
+        "_type": "document",
         "_id": cnt + 1,
         "_source": {
             "sp_quest": quest_sp,
@@ -34,6 +31,6 @@ for key in keys:
 
 es = Elasticsearch(es_hosts)
 helpers.bulk(es, body)
-res = es.search(index='chitchat', body={"query": {"match_all": {}}})
+res = es.search(index='chitchat_panda', body={"query": {"match_all": {}}})
 pprint(res)
 
