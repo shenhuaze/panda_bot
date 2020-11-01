@@ -1,0 +1,78 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - faq
+  - contact_sales
+  - inform
+  - chitchat
+
+
+entities:
+  - company
+  - job_function
+  - person_name
+  - budget
+  - business_email
+  - use_case
+
+
+slots:
+  company:
+    type: unfeaturized
+  job_function:
+    type: unfeaturized
+  person_name:
+    type: unfeaturized
+  budget:
+    type: unfeaturized
+  business_email:
+    type: unfeaturized
+  use_case:
+    type: unfeaturized
+
+
+responses:
+  utter_greet:
+    - text: 您好，请问有什么可以帮您^_^
+  utter_cheer_up:
+    - text: 给你看一张让人开心的图片
+      image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+    - text: 对你有帮助吗？
+  utter_happy:
+    - text: 非常好，继续加油！
+  utter_goodbye:
+    - text: 再见
+  utter_iamabot:
+    - text: 我是一个机器人
+  utter_ask_business_email:
+    - text: 请输入您的邮箱地址
+  utter_ask_company:
+    - text: 您的公司名字叫什么？
+  utter_ask_budget:
+    - text: 请问您的预算是多少？
+  utter_ask_job_function:
+    - text: 您是什么职位？
+  utter_ask_person_name:
+    - text: 请问您叫什么名字？
+  utter_ask_use_case:
+    - text: 您的对话机器人的使用场景是什么？
+
+
+actions:
+  - respond_faq
+  - action_chitchat
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+forms:
+  - sales_form
